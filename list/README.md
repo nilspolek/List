@@ -1,54 +1,131 @@
-# React + TypeScript + Vite
+# Task List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive task management application built with React, TypeScript, and Tailwind CSS. This application allows users to create, manage, and track their tasks with a clean and intuitive interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 **User Authentication**
+  - Secure login and registration system
+  - User profile with avatar display
+  - Persistent sessions using cookies
 
-## Expanding the ESLint configuration
+- 📝 **Task Management**
+  - Create tasks with captions and detailed descriptions
+  - Mark tasks as complete/incomplete
+  - Edit existing tasks
+  - Delete tasks
+  - Responsive grid layout for task display
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎨 **Modern UI/UX**
+  - Clean and intuitive interface
+  - Responsive design for all screen sizes
+  - Modal dialogs for task creation
+  - Dropdown menus for task actions
+  - Visual feedback for task status
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech Stack
+
+- **Frontend Framework**: React with TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **State Management**: React Hooks
+- **Authentication**: Custom service with cookie-based sessions
+- **Package Manager**: Bun
+
+## Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh) (v1.0.0 or higher)
+- Node.js (v14 or higher) - Required for some dependencies
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd task-list
+   ```
+
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+3. Start the development server:
+   ```bash
+   bun run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Usage
+
+### Authentication
+
+1. **Registration**
+   - Click "Don't have an account? Register"
+   - Fill in your first name, last name, email, and password
+   - Click "Register" to create your account
+
+2. **Login**
+   - Enter your email and password
+   - Click "Login" to access your tasks
+
+### Managing Tasks
+
+1. **Creating a Task**
+   - Click the "Add Task" button
+   - Enter a caption and description
+   - Click "Add Task" to create
+
+2. **Task Actions**
+   - Click the three dots menu on any task to:
+     - Mark as done/undone
+     - Edit task details
+     - Delete the task
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── TaskList.tsx      # Main task management component
+│   ├── Login.tsx         # Login form component
+│   ├── Register.tsx      # Registration form component
+│   └── ui/              # Reusable UI components
+├── services/
+│   ├── taskService.ts   # Task management logic
+│   └── userService.ts   # User authentication logic
+└── App.tsx              # Main application component
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Available Scripts
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- `bun run dev` - Start development server
+- `bun run build` - Build for production
+- `bun run preview` - Preview production build
+- `bun run lint` - Run ESLint
+- `bun run type-check` - Run TypeScript type checking
+
+### Code Style
+
+This project uses:
+- ESLint for code linting
+- Prettier for code formatting
+- TypeScript for type safety
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
