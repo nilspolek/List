@@ -1,4 +1,3 @@
 # List
-## Run
-bun install
-bun run dev
+
+see the readme in ./list
